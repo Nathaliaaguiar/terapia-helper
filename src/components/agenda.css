@@ -1,0 +1,76 @@
+/* Container principal da página de agenda */
+.agenda-container {
+  background: linear-gradient(135deg, #6e7dff, #a6b0ff);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Título da página */
+.agenda-container h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  font-weight: 700;
+}
+
+/* Estilo do formulário */
+.agenda-container form {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.agenda-container label {
+  font-size: 1.2rem;
+  color: #4a4a4a;
+  margin-bottom: 8px;
+  display: block;
+  font-weight: 500;
+}
+
+.agenda-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.agenda-container input:focus {
+  border-color: #6e7dff;
+  box-shadow: 0 0 8px rgba(110, 125, 255, 0.5);
+}
+
+.agenda-container button {
+  width: 100%;
+  padding: 14px;
+  background-color: #6e7dff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.agenda-container button:hover {
+  background-color: #5a6ed9;
+}
+
+.agenda-container button:disabled {
+  background-color: #b3b3b3;
+  cursor: not-allowed;
+}

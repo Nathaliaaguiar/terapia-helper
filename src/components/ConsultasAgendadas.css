@@ -1,0 +1,70 @@
+/* Container principal das consultas agendadas */
+.consultas-container {
+    background-color: #f4f4f9;
+    padding: 60px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+  
+  /* Título da página */
+  .consultas-container h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  /* Estilização da tabela */
+  .consultas-table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Cabeçalho da tabela */
+  .consultas-table th,
+  .consultas-table td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  .consultas-table th {
+    background-color: #6e7dff;
+    color: white;
+    font-weight: 600;
+  }
+  
+  /* Estilo das células */
+  .consultas-table td {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  /* Estilo alternado para as linhas */
+  .consultas-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Efeito de hover nas linhas */
+  .consultas-table tr:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+  
+  /* Remove a borda inferior na última linha */
+  .consultas-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  
