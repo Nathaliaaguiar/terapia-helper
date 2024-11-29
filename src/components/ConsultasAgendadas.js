@@ -9,17 +9,24 @@ const ConsultasAgendadas = () => {
   useEffect(() => {
     const consultasRef = ref(database, 'consultas'); // Referência para o nó de consultas
 
-    // Escutando mudanças no banco de dados
-    onValue(consultasRef, (snapshot) => {
+    // Função que ouve alterações no Firebase e atualiza as consultas
+    const unsubscribe = onValue(consultasRef, (snapshot) => {
       const data = snapshot.val();
-      const consultasArray = [];
+      console.log('Consultas recebidas:', data); // Para debugar os dados recebidos
 
-      for (let id in data) {
-        consultasArray.push({ ...data[id], id });
+      const consultasArray = [];
+      if (data) {
+        // Iterando pelas consultas no Firebase
+        for (let id in data) {
+          consultasArray.push({ ...data[id], id });
+        }
       }
 
       setConsultas(consultasArray); // Atualiza o estado com as consultas do Firebase
     });
+
+    // Cleanup do listener quando o componente for desmontado
+    return () => unsubscribe();
   }, []);
 
   return (

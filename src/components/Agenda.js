@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { database, ref, set } from '../firebase/firebase';
+import { database, ref, push } from '../firebase/firebase'; // Importando push
 import './agenda.css';
 
 const Agenda = () => {
@@ -15,12 +15,15 @@ const Agenda = () => {
       return;
     }
     setIsLoading(true);
-    const consultaId = new Date().getTime(); // ID único para a consulta
-    set(ref(database, 'consultas/' + consultaId), {
-      nomePaciente,
-      dataConsulta,
-      horaConsulta,
-    })
+
+    const consultaData = {
+      paciente: nomePaciente,
+      data: dataConsulta,
+      hora: horaConsulta,
+    };
+
+    // Usando push() para gerar um ID único automaticamente
+    push(ref(database, 'consultas'), consultaData)
       .then(() => {
         alert('Consulta agendada com sucesso!');
         setNomePaciente('');
